@@ -68,7 +68,7 @@ The website updates automatically from `projects.json` — no build step. On pus
 ## 📊 Progress Tracker
 
 <!-- TRACKER:START -->
-**Overall:** `░░░░░░░░░░░░░░░░░░ 0%`  —  0 complete, 0 in progress, 21 total.
+**Overall:** `░░░░░░░░░░░░░░░░░░ 0%`  —  0 complete, 1 in progress, 21 total.
 
 | Track | Progress | Done / Total |
 |-------|----------|--------------|
@@ -78,7 +78,7 @@ The website updates automatically from `projects.json` — no build step. On pus
 
 | | Project | Track | Level | Status |
 |-|---------|-------|-------|--------|
-| ⬜ | Modern C++ Foundations & Data-Structure Katas | C++ / Low-Latency | Foundation | planned |
+| 🔨 | [Modern C++ Foundations & Data-Structure Katas](https://github.com/covenant-Peace/quant-hw-portfolio/tree/main/cpp/foundations-kata) | C++ / Low-Latency | Foundation | in-progress |
 | ⬜ | Market-Data CSV/Tick Parser & Stats Engine | C++ / Low-Latency | Foundation | planned |
 | ⬜ | Limit Order Book | C++ / Low-Latency | Basic | planned |
 | ⬜ | Moving-Average Strategy Backtester | C++ / Low-Latency | Basic | planned |

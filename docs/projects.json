@@ -31,13 +31,14 @@
       "title": "Modern C++ Foundations & Data-Structure Katas",
       "track": "cpp",
       "level": "foundation",
-      "status": "planned",
-      "summary": "A set of from-scratch implementations: intrusive linked list, fixed-capacity ring buffer, small-vector, and a type-safe tagged union. Each with unit tests and complexity notes.",
+      "status": "in-progress",
+      "summary": "From-scratch ring buffer, static_vector, and intrusive doubly-linked list — allocation-conscious structures with self-checking tests and complexity notes.",
       "whyItMatters": "Interviewers probe ownership, RAII, move semantics, and cache-aware data layout. These katas are where you earn the vocabulary.",
       "skills": ["C++20", "RAII / move semantics", "templates", "unit testing (GoogleTest/Catch2)", "CMake"],
       "path": "cpp/foundations-kata",
-      "repo": "", "writeup": "", "demo": "",
-      "started": null, "completed": null, "metrics": [], "tags": ["fundamentals"]
+      "repo": "https://github.com/covenant-Peace/quant-hw-portfolio/tree/main/cpp/foundations-kata",
+      "writeup": "", "demo": "",
+      "started": "2026-10-22", "completed": null, "metrics": [], "tags": ["fundamentals"]
     },
     {
       "id": "cpp-market-data-parser",
