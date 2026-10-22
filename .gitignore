@@ -1,0 +1,41 @@
+# ---- C++ / CMake ----
+build/
+*/build/
+cmake-build-*/
+compile_commands.json
+*.o
+*.obj
+*.a
+*.so
+*.dylib
+*.exe
+
+# ---- HDL simulation ----
+*.vcd
+*.vvp
+*.fst
+*.wlf
+work/
+transcript
+xsim.dir/
+*.jou
+*.log
+*.pb
+sim_build/
+
+# ---- FPGA vendor tool output (keep sources + constraints, ignore generated) ----
+*.bit
+*.bin
+*.rpt
+*.sof
+.Xil/
+vivado*.str
+.qsys_edit/
+db/
+incremental_db/
+
+# ---- OS / editor ----
+.DS_Store
+.vscode/
+.idea/
+*.swp

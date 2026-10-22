@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Engineering Portfolio — Low-Latency C++ & FPGA</title>
+  <meta name="description" content="A tracked, year-long portfolio across low-latency C++ and SystemVerilog/VHDL digital design, built toward roles in electronic trading and hardware acceleration." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app">
+    <header class="hero">
+      <div class="hero-inner">
+        <div class="hero-top">
+          <span class="kicker">Portfolio &amp; progress tracker</span>
+          <nav class="links" id="owner-links"></nav>
+        </div>
+        <h1 id="owner-name">Loading…</h1>
+        <p class="tagline" id="owner-tagline"></p>
+        <p class="summary" id="owner-summary"></p>
+        <div class="timeline" id="timeline"></div>
+      </div>
+    </header>
+
+    <section class="overview">
+      <div class="overview-grid">
+        <div class="ring-card">
+          <div class="ring" id="overall-ring"></div>
+          <div class="ring-label">
+            <strong id="overall-pct">0%</strong>
+            <span id="overall-count">0 / 0 projects complete</span>
+          </div>
+        </div>
+        <div class="track-stats" id="track-stats"></div>
+      </div>
+      <div class="level-legend" id="level-matrix"></div>
+    </section>
+
+    <section class="controls">
+      <div class="filter-group" id="filter-track"></div>
+      <div class="filter-group" id="filter-level"></div>
+      <div class="filter-group" id="filter-status"></div>
+    </section>
+
+    <main id="board" class="board"></main>
+
+    <footer class="site-footer">
+      <p>Single source of truth: <code>docs/projects.json</code>. Update that file and this page + the README tracker stay in sync. Built as a long-term, job-ready portfolio.</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

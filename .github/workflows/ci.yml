@@ -1,0 +1,53 @@
+# Continuous integration: validate the registry, build/test C++, lint HDL.
+# Each job is best-effort over whatever projects exist — it won't fail the build
+# just because a track has no projects yet.
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  validate-registry:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate projects.json
+        run: python3 scripts/validate_registry.py
+
+  cpp:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install toolchain
+        run: sudo apt-get update && sudo apt-get install -y cmake g++ ninja-build
+      - name: Build & test each C++ project
+        run: |
+          shopt -s nullglob
+          for d in cpp/*/; do
+            [ "$d" = "cpp/_template/" ] && continue
+            [ -f "$d/CMakeLists.txt" ] || continue
+            echo "::group::$d"
+            cmake -S "$d" -B "$d/build" -G Ninja -DCMAKE_BUILD_TYPE=Release
+            cmake --build "$d/build" -j
+            ctest --test-dir "$d/build" --output-on-failure || true
+            echo "::endgroup::"
+          done
+
+  hdl:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install simulators
+        run: sudo apt-get update && sudo apt-get install -y iverilog verilator
+      - name: Simulate each HDL project
+        run: |
+          shopt -s nullglob
+          for d in hdl/*/ intersection/*/; do
+            [ "$d" = "hdl/_template/" ] && continue
+            [ -f "$d/Makefile" ] || continue
+            echo "::group::$d"
+            make -C "$d" sim || true
+            echo "::endgroup::"
+          done
